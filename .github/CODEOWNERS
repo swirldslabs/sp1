@@ -1,0 +1,20 @@
+###################################
+##### Global Protection Rule ######
+###################################
+# NOTE: This rule is overriden by the more specific rules below. This is the catch-all rule for all files not covered by the more specific rules below.
+ *                                                  @swirldslabs/cryptography @swirldslabs/platform-ci
+
+# Protection Rules for Github Configuration Files and Actions Workflows
+/.github/                                           @swirldslabs/platform-ci
+/.github/workflows/                                 @swirldslabs/platform-ci
+
+# Self-protection for root CODEOWNERS files (this file should not exist and should definitely require approval)
+/CODEOWNERS                                         @swirldslabs/platform-ci
+
+# Protect the repository root files
+/README.md                                          @swirldslabs/platform-ci
+**/LICENSE                                          @swirldslabs/platform-ci
+
+# Git Ignore definitions
+**/.gitignore                                       @swirldslabs/platform-ci
+**/.gitignore.*                                     @swirldslabs/platform-ci
